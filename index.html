@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dora Fennell Wreaths — Handmade in Jacksonville, FL</title>
+<meta name="description" content="Handmade seasonal wreaths by Dora Fennell. Made to order, ready in about a week. Jacksonville, FL.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Inter:ital@1&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --cream:#FFF8EE;
+    --cream-deep:#F7EFDD;
+    --berry:#A8325E;
+    --berry-dark:#7E2147;
+    --gold:#E8A23D;
+    --forest:#2F4D3A;
+    --ink:#2B2520;
+    --ink-soft:#5A5048;
+    --blush:#F4D9D9;
+    --line:#E3D6BE;
+    --radius:18px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3,.display{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    margin:0;
+  }
+
+  .eyebrow{
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:0.72rem;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--berry);
+  }
+
+  a{color:inherit;}
+
+  /* ---------- Skip link / focus ---------- */
+  .skip-link{
+    position:absolute; left:-999px; top:0;
+    background:var(--ink); color:var(--cream); padding:0.6em 1em; z-index:100;
+  }
+  .skip-link:focus{ left:1em; top:1em; }
+  :focus-visible{ outline:3px solid var(--berry); outline-offset:2px; border-radius:4px; }
+
+  /* ---------- Top bar ---------- */
+  .topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:1.4rem 6vw;
+    position:relative;
+    z-index:10;
+  }
+  .brand{
+    display:flex;
+    align-items:baseline;
+    gap:0.5rem;
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:1.3rem;
+  }
+  .brand .leaf{ font-size:1rem; }
+  .topbar nav{
+    display:flex;
+    gap:2rem;
+    font-size:0.92rem;
+    font-weight:600;
+  }
+  .topbar nav a{
+    text-decoration:none;
+    color:var(--ink-soft);
+    transition:color 0.2s;
+  }
+  .topbar nav a:hover{ color:var(--berry); }
+
+  @media (max-width:720px){
+    .topbar nav{ display:none; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    margin:0 4vw;
+    border-radius:28px;
+    overflow:hidden;
+    min-height:88vh;
+    display:flex;
+    align-items:flex-end;
+  }
+  .hero img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:50% 30%;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg, rgba(43,37,32,0) 30%, rgba(43,37,32,0.78) 92%);
+  }
+  .hero-content{
+    position:relative;
+    z-index:2;
+    padding:3rem 3rem 3.4rem;
+    color:#fff;
+    max-width:680px;
+  }
+  .hero-content .eyebrow{ color:var(--gold); }
+  .hero-content h1{
+    font-size:clamp(2.6rem, 6vw, 4.6rem);
+    line-height:1.02;
+    margin:0.5rem 0 1rem;
+    color:#fff;
+  }
+  .hero-content h1 em{
+    font-style:italic;
+    color:var(--gold);
+  }
+  .hero-content p{
+    font-size:1.15rem;
+    line-height:1.5;
+    max-width:520px;
+    color:#F4ECDD;
+    margin:0 0 1.6rem;
+  }
+  .hero-cta{
+    display:flex;
+    gap:1rem;
+    flex-wrap:wrap;
+  }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:0.5rem;
+    padding:0.85rem 1.6rem;
+    border-radius:999px;
+    font-weight:700;
+    font-size:0.98rem;
+    text-decoration:none;
+    border:2px solid transparent;
+    cursor:pointer;
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn:hover{ transform:translateY(-2px); }
+  .btn-primary{
+    background:var(--berry);
+    color:#fff;
+    box-shadow:0 8px 20px -8px rgba(168,50,94,0.6);
+  }
+  .btn-primary:hover{ background:var(--berry-dark); }
+  .btn-ghost{
+    background:rgba(255,255,255,0.12);
+    color:#fff;
+    border-color:rgba(255,255,255,0.55);
+    backdrop-filter:blur(4px);
+  }
+  .btn-ghost:hover{ background:rgba(255,255,255,0.22); }
+
+  /* ---------- Strip of trust signals ---------- */
+  .strip{
+    display:flex;
+    justify-content:center;
+    gap:clamp(1.5rem,5vw,4rem);
+    flex-wrap:wrap;
+    padding:2.6rem 6vw;
+    text-align:center;
+  }
+  .strip-item .num{
+    font-family:'Fraunces',serif;
+    font-size:2.1rem;
+    color:var(--berry);
+    display:block;
+  }
+  .strip-item .label{
+    font-size:0.85rem;
+    color:var(--ink-soft);
+    font-weight:600;
+  }
+
+  /* ---------- Section heads ---------- */
+  .section{
+    padding:2.5rem 6vw 5rem;
+  }
+  .section-head{
+    max-width:640px;
+    margin-bottom:2.8rem;
+  }
+  .section-head h2{
+    font-size:clamp(2rem,4vw,2.8rem);
+    margin-top:0.5rem;
+    line-height:1.08;
+  }
+  .section-head p{
+    color:var(--ink-soft);
+    font-size:1.05rem;
+    line-height:1.5;
+    margin-top:0.9rem;
+  }
+
+  /* ---------- Gallery: the "clothesline" layout ---------- */
+  .gallery{
+    position:relative;
+  }
+  .gallery-line{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:2.2rem 2rem;
+  }
+  @media (max-width:980px){
+    .gallery-line{ grid-template-columns:repeat(2,1fr); }
+  }
+  @media (max-width:620px){
+    .gallery-line{ grid-template-columns:1fr; }
+  }
+
+  .wreath-card{
+    background:#fff;
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:0 1px 2px rgba(43,37,32,0.06);
+    border:1px solid var(--line);
+    transition:transform 0.25s ease, box-shadow 0.25s ease;
+    display:flex;
+    flex-direction:column;
+  }
+  .wreath-card:nth-child(odd){ transform:translateY(-6px); }
+  .wreath-card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 22px 40px -18px rgba(43,37,32,0.28);
+  }
+  .wreath-card .clip{
+    position:relative;
+    aspect-ratio:4/5;
+    overflow:hidden;
+    background:var(--cream-deep);
+  }
+  .wreath-card .clip img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform 0.5s ease;
+  }
+  .wreath-card:hover .clip img{ transform:scale(1.05); }
+  .clip-pin{
+    position:absolute;
+    top:0.7rem;
+    left:50%;
+    transform:translateX(-50%);
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:var(--gold);
+    box-shadow:0 2px 4px rgba(0,0,0,0.25);
+    z-index:2;
+  }
+  .season-tag{
+    position:absolute;
+    bottom:0.8rem;
+    left:0.8rem;
+    background:rgba(43,37,32,0.78);
+    color:#fff;
+    font-size:0.72rem;
+    font-weight:700;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    padding:0.35rem 0.7rem;
+    border-radius:999px;
+  }
+  .wreath-card .card-body{
+    padding:1.2rem 1.3rem 1.4rem;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+  }
+  .wreath-card h3{
+    font-size:1.25rem;
+    margin-bottom:0.4rem;
+  }
+  .wreath-card .desc{
+    font-size:0.92rem;
+    color:var(--ink-soft);
+    line-height:1.5;
+    flex:1;
+    margin-bottom:1rem;
+  }
+  .card-cta{
+    font-size:0.88rem;
+    font-weight:700;
+    color:var(--berry);
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:0.35rem;
+  }
+  .card-cta:hover{ text-decoration:underline; }
+
+  /* ---------- How it works ---------- */
+  .how{
+    background:var(--forest);
+    border-radius:28px;
+    margin:0 4vw;
+    padding:3.6rem 4vw;
+    color:#F4ECDD;
+  }
+  .how .eyebrow{ color:var(--gold); }
+  .how h2{ color:#fff; font-size:clamp(1.9rem,4vw,2.5rem); margin-top:0.5rem; }
+  .how-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:2rem;
+    margin-top:2.6rem;
+  }
+  @media (max-width:780px){
+    .how-grid{ grid-template-columns:1fr; }
+  }
+  .how-step{
+    border-top:2px solid rgba(244,236,221,0.25);
+    padding-top:1.2rem;
+  }
+  .how-step .step-label{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:1rem;
+    color:var(--gold);
+    margin-bottom:0.6rem;
+    display:block;
+  }
+  .how-step h3{
+    color:#fff;
+    font-size:1.2rem;
+    margin-bottom:0.5rem;
+  }
+  .how-step p{
+    font-size:0.94rem;
+    line-height:1.55;
+    color:#E3D9C6;
+    margin:0;
+  }
+
+  /* ---------- About ---------- */
+  .about{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:3.5rem;
+    align-items:center;
+  }
+  @media (max-width:860px){
+    .about{ grid-template-columns:1fr; gap:2rem; }
+  }
+  .about-photo{
+    border-radius:var(--radius);
+    overflow:hidden;
+    aspect-ratio:4/5;
+  }
+  .about-photo img{ width:100%; height:100%; object-fit:cover; }
+  .about-text h2{
+    font-size:clamp(2rem,3.6vw,2.6rem);
+    margin-bottom:1.1rem;
+    line-height:1.08;
+  }
+  .about-text p{
+    color:var(--ink-soft);
+    font-size:1.05rem;
+    line-height:1.6;
+    margin-bottom:1rem;
+  }
+  .about-text strong{ color:var(--ink); }
+
+  /* ---------- Request form ---------- */
+  .request{
+    background:var(--blush);
+    border-radius:28px;
+    margin:0 4vw;
+    padding:3.6rem 4vw 4rem;
+  }
+  .request-inner{
+    display:grid;
+    grid-template-columns:1fr 1.2fr;
+    gap:3rem;
+  }
+  @media (max-width:860px){
+    .request-inner{ grid-template-columns:1fr; }
+  }
+  .request-intro h2{
+    font-size:clamp(2rem,3.6vw,2.7rem);
+    margin:0.5rem 0 1rem;
+    line-height:1.08;
+  }
+  .request-intro p{
+    color:var(--ink-soft);
+    line-height:1.6;
+    font-size:1.02rem;
+    margin-bottom:1rem;
+  }
+  .request-intro .alt-contact{
+    margin-top:1.6rem;
+    padding-top:1.4rem;
+    border-top:1px solid rgba(43,37,32,0.15);
+    font-size:0.95rem;
+  }
+  .request-intro .alt-contact a{
+    color:var(--berry);
+    font-weight:700;
+    text-decoration:none;
+  }
+  .request-intro .alt-contact a:hover{ text-decoration:underline; }
+
+  form{
+    background:#fff;
+    border-radius:var(--radius);
+    padding:2.2rem;
+    box-shadow:0 1px 2px rgba(43,37,32,0.06);
+  }
+  .field{
+    margin-bottom:1.3rem;
+  }
+  .field label{
+    display:block;
+    font-size:0.85rem;
+    font-weight:700;
+    margin-bottom:0.4rem;
+    color:var(--ink);
+  }
+  .field .hint{
+    font-weight:400;
+    color:var(--ink-soft);
+    font-size:0.8rem;
+  }
+  .field input,
+  .field select,
+  .field textarea{
+    width:100%;
+    padding:0.75rem 0.9rem;
+    border:1.5px solid var(--line);
+    border-radius:10px;
+    font-family:'Inter',sans-serif;
+    font-size:0.98rem;
+    background:var(--cream);
+    color:var(--ink);
+  }
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus{
+    outline:none;
+    border-color:var(--berry);
+    box-shadow:0 0 0 3px rgba(168,50,94,0.15);
+  }
+  .field textarea{ resize:vertical; min-height:110px; }
+  .row-2{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1rem;
+  }
+  @media (max-width:480px){
+    .row-2{ grid-template-columns:1fr; }
+  }
+  .submit-row{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+    margin-top:0.4rem;
+    flex-wrap:wrap;
+  }
+  .submit-row .btn-primary{
+    border:none;
+  }
+  .form-note{
+    font-size:0.82rem;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    padding:3rem 6vw 2.5rem;
+    text-align:center;
+  }
+  footer .brand{
+    justify-content:center;
+    margin-bottom:0.8rem;
+  }
+  footer p{
+    color:var(--ink-soft);
+    font-size:0.88rem;
+    margin:0.3rem 0;
+  }
+  footer a{
+    color:var(--berry);
+    text-decoration:none;
+    font-weight:600;
+  }
+  footer a:hover{ text-decoration:underline; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ transition:none !important; animation:none !important; scroll-behavior:auto !important; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="brand"><span class="leaf">🌿</span> Dora Fennell Wreaths</div>
+  <nav>
+    <a href="#wreaths">Wreaths</a>
+    <a href="#how-it-works">How it works</a>
+    <a href="#about">About Dora</a>
+    <a href="#request">Request a wreath</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src="autumn-harvest.jpg" alt="A lush handmade wreath with rust-orange peonies, sunflowers, eucalyptus, mini pumpkins, and striped ribbon, hanging on a white door.">
+    <div class="hero-content">
+      <span class="eyebrow">Jacksonville, Florida · Handmade since 2006</span>
+      <h1>A wreath for your door,<br><em>made by hand</em>, just for you.</h1>
+      <p>Dora Fennell has been hand-tying wreaths for twenty years — full, textured, and built to last a season (or several). Tell her what you're picturing, and she'll have it ready for your door in about a week.</p>
+      <div class="hero-cta">
+        <a href="#request" class="btn btn-primary">Request a wreath</a>
+        <a href="#wreaths" class="btn btn-ghost">See her work</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <section class="strip">
+    <div class="strip-item"><span class="num">20</span><span class="label">Years hand-tying wreaths</span></div>
+    <div class="strip-item"><span class="num">~1 wk</span><span class="label">Typical turnaround</span></div>
+    <div class="strip-item"><span class="num">100%</span><span class="label">Made to order, by hand</span></div>
+    <div class="strip-item"><span class="num">Local</span><span class="label">Pickup in Jacksonville, FL</span></div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section" id="wreaths">
+    <div class="section-head">
+      <span class="eyebrow">A look at the work</span>
+      <h2>A look at the work.</h2>
+      <p>Every wreath below was designed and tied by hand — no two come out quite the same. Use these as a starting point: Dora can match a palette, swap a ribbon, or build something entirely new for your door.</p>
+    </div>
+
+    <div class="gallery">
+      <div class="gallery-line">
+
+        <article class="wreath-card">
+          <div class="clip">
+            <span class="clip-pin" aria-hidden="true"></span>
+            <img src="halloween-noir.jpg" alt="A dramatic black and red Halloween wreath with velvet roses, glitter oak leaves, mini pumpkins, and a damask bow.">
+            <span class="season-tag">Halloween</span>
+          </div>
+          <div class="card-body">
+            <h3>Midnight &amp; Garnet</h3>
+            <p class="desc">Deep black florals and glittered foliage, set off with a red damask bow and a scatter of tiny pumpkins. Moody, not cutesy.</p>
+            <a class="card-cta" href="#request">Request this style →</a>
+          </div>
+        </article>
+
+        <article class="wreath-card">
+          <div class="clip">
+            <span class="clip-pin" aria-hidden="true"></span>
+            <img src="halloween-noir2.jpg" alt="A second dramatic Halloween wreath in dark tones with black florals and moody ribbon.">
+            <span class="season-tag">Halloween</span>
+          </div>
+          <div class="card-body">
+            <h3>Midnight &amp; Garnet II</h3>
+            <p class="desc">A second take on the dark Halloween look — same moody palette, slightly different arrangement. Perfect for a larger door.</p>
+            <a class="card-cta" href="#request">Request this style →</a>
+          </div>
+        </article>
+
+        <article class="wreath-card">
+          <div class="clip">
+            <span class="clip-pin" aria-hidden="true"></span>
+            <img src="Grinch.jpg" alt="A fun Grinch-themed Christmas wreath in green and red.">
+            <span class="season-tag">Christmas</span>
+          </div>
+          <div class="card-body">
+            <h3>You're a Mean One</h3>
+            <p class="desc">A playful Grinch-themed wreath that brings holiday cheer with a smirk. Great for anyone who decorates with a sense of humor.</p>
+            <a class="card-cta" href="#request">Request this style →</a>
+          </div>
+        </article>
+
+        <article class="wreath-card">
+          <div class="clip">
+            <span class="clip-pin" aria-hidden="true"></span>
+            <img src="Christmas.jpg" alt="A classic handmade Christmas wreath with red berries, greenery, and a traditional bow.">
+            <span class="season-tag">Christmas</span>
+          </div>
+          <div class="card-body">
+            <h3>Classic Christmas</h3>
+            <p class="desc">The timeless look — lush greenery, red berries, and a full ribbon bow. A front-door staple that works with any décor.</p>
+            <a class="card-cta" href="#request">Request this style →</a>
+          </div>
+        </article>
+
+        <article class="wreath-card">
+          <div class="clip">
+            <span class="clip-pin" aria-hidden="true"></span>
+            <img src="Christmas Berry.jpg" alt="A Christmas wreath featuring bright red berries and festive greenery.">
+            <span class="season-tag">Christmas</span>
+          </div>
+          <div class="card-body">
+            <h3>Christmas Berry</h3>
+            <p class="desc">Bold red berries bursting out of a full greenery base. Bright and cheerful — the one neighbors will notice from the street.</p>
+            <a class="card-cta" href="#request">Request this style →</a>
+          </div>
+        </article>
+
+        <article class="wreath-card">
+          <div class="clip">
+            <span class="clip-pin" aria-hidden="true"></span>
+            <img src="Christmas Silver.jpg" alt="An elegant silver and white Christmas wreath with glittery accents.">
+            <span class="season-tag">Christmas</span>
+          </div>
+          <div class="card-body">
+            <h3>Silver Christmas</h3>
+            <p class="desc">Cool silver and white with glittered accents — elegant rather than traditional. Perfect for a modern or neutral front door.</p>
+            <a class="card-cta" href="#request">Request this style →</a>
+          </div>
+        </article>
+
+        <article class="wreath-card">
+          <div class="clip">
+            <span class="clip-pin" aria-hidden="true"></span>
+            <img src="Silver Bells.jpg" alt="A Christmas wreath with silver bells and festive ribbon.">
+            <span class="season-tag">Christmas</span>
+          </div>
+          <div class="card-body">
+            <h3>Silver Bells</h3>
+            <p class="desc">Jingle-bell accents woven into lush greenery with a classic holiday bow. Classic and a little sparkly.</p>
+            <a class="card-cta" href="#request">Request this style →</a>
+          </div>
+        </article>
+
+        <article class="wreath-card">
+          <div class="clip">
+            <span class="clip-pin" aria-hidden="true"></span>
+            <img src="Christmas Tarten.jpg" alt="A Christmas wreath in classic red and green tartan plaid ribbon.">
+            <span class="season-tag">Christmas</span>
+          </div>
+          <div class="card-body">
+            <h3>Tartan Christmas</h3>
+            <p class="desc">Rich red and green tartan ribbon tied into a full bow over a lush pine base. Cozy, traditional, and very hard to walk past without smiling.</p>
+            <a class="card-cta" href="#request">Request this style →</a>
+          </div>
+        </article>
+
+        <article class="wreath-card">
+          <div class="clip">
+            <span class="clip-pin" aria-hidden="true"></span>
+            <img src="Christmas white Berry.jpg" alt="A white and cream Christmas wreath with frosted berries and elegant ribbon.">
+            <span class="season-tag">Christmas</span>
+          </div>
+          <div class="card-body">
+            <h3>White Berry Christmas</h3>
+            <p class="desc">Frosted white berries and cream ribbon give this one a soft, wintry elegance. Beautiful on a dark door.</p>
+            <a class="card-cta" href="#request">Request this style →</a>
+          </div>
+        </article>
+
+        <article class="wreath-card">
+          <div class="clip">
+            <span class="clip-pin" aria-hidden="true"></span>
+            <img src="Frosty Red Christmas.jpg" alt="A Christmas wreath with frosty red accents and winter greenery.">
+            <span class="season-tag">Christmas</span>
+          </div>
+          <div class="card-body">
+            <h3>Frosty Red</h3>
+            <p class="desc">Deep red florals dusted with frost against a full pine base. A Christmas wreath that looks as cold as it does festive.</p>
+            <a class="card-cta" href="#request">Request this style →</a>
+          </div>
+        </article>
+
+        <article class="wreath-card">
+          <div class="clip">
+            <span class="clip-pin" aria-hidden="true"></span>
+            <img src="Black and Gold.jpg" alt="A glamorous black and gold wreath with ribbon and floral accents.">
+            <span class="season-tag">Everyday</span>
+          </div>
+          <div class="card-body">
+            <h3>Black &amp; Gold</h3>
+            <p class="desc">A dramatic, year-round statement piece — black florals with gold accents and ribbon. Elegant enough for any front door any time of year.</p>
+            <a class="card-cta" href="#request">Request this style →</a>
+          </div>
+        </article>
+
+        <article class="wreath-card">
+          <div class="clip">
+            <span class="clip-pin" aria-hidden="true"></span>
+            <img src="Black and silver.jpg" alt="A sleek black and silver wreath with shimmery accents.">
+            <span class="season-tag">Everyday</span>
+          </div>
+          <div class="card-body">
+            <h3>Black &amp; Silver</h3>
+            <p class="desc">Sleek black and shimmery silver — cool-toned and modern. Works for New Year's or as a year-round statement.</p>
+            <a class="card-cta" href="#request">Request this style →</a>
+          </div>
+        </article>
+
+        <article class="wreath-card">
+          <div class="clip">
+            <span class="clip-pin" aria-hidden="true"></span>
+            <img src="Purple.jpg" alt="A purple floral wreath with lush blooms and ribbon.">
+            <span class="season-tag">Everyday</span>
+          </div>
+          <div class="card-body">
+            <h3>Purple Reign</h3>
+            <p class="desc">Rich purple blooms layered over full greenery. Bold, beautiful, and a crowd-pleaser for anyone who loves a pop of color.</p>
+            <a class="card-cta" href="#request">Request this style →</a>
+          </div>
+        </article>
+
+        <article class="wreath-card">
+          <div class="clip">
+            <span class="clip-pin" aria-hidden="true"></span>
+            <img src="Purple and yellow.jpg" alt="A vibrant purple and yellow wreath with mixed florals.">
+            <span class="season-tag">Everyday</span>
+          </div>
+          <div class="card-body">
+            <h3>Purple &amp; Gold</h3>
+            <p class="desc">A striking combination — deep purple florals paired with sunny yellow accents. Cheerful and unexpected in the best way.</p>
+            <a class="card-cta" href="#request">Request this style →</a>
+          </div>
+        </article>
+
+        <article class="wreath-card">
+          <div class="clip">
+            <span class="clip-pin" aria-hidden="true"></span>
+            <img src="Roses.jpg" alt="A romantic wreath filled with roses in soft tones.">
+            <span class="season-tag">Everyday</span>
+          </div>
+          <div class="card-body">
+            <h3>Garden Roses</h3>
+            <p class="desc">A full wreath of layered roses — romantic and timeless. A favorite for front doors, porches, and gifts.</p>
+            <a class="card-cta" href="#request">Request this style →</a>
+          </div>
+        </article>
+
+        <article class="wreath-card">
+          <div class="clip">
+            <span class="clip-pin" aria-hidden="true"></span>
+            <img src="Dog Love.jpg" alt="A fun dog-themed wreath for pet lovers.">
+            <span class="season-tag">Everyday</span>
+          </div>
+          <div class="card-body">
+            <h3>Dog Mom</h3>
+            <p class="desc">For the household that is very clearly run by dogs. A fun, personality-forward wreath that makes visitors smile before they even knock.</p>
+            <a class="card-cta" href="#request">Request this style →</a>
+          </div>
+        </article>
+
+        <article class="wreath-card">
+          <div class="clip">
+            <span class="clip-pin" aria-hidden="true"></span>
+            <img src="Baby Girl.jpg" alt="A soft pink baby girl wreath for a new arrival.">
+            <span class="season-tag">Baby</span>
+          </div>
+          <div class="card-body">
+            <h3>Baby Girl</h3>
+            <p class="desc">A sweet pink wreath to celebrate a new arrival. Makes a beautiful hospital door decoration or a lasting keepsake gift.</p>
+            <a class="card-cta" href="#request">Request this style →</a>
+          </div>
+        </article>
+
+        <article class="wreath-card">
+          <div class="clip">
+            <span class="clip-pin" aria-hidden="true"></span>
+            <img src="patriotic-meadow.jpg" alt="A red, white, and blue wreath with daisies and poppies on a grapevine base.">
+            <span class="season-tag">Patriotic</span>
+          </div>
+          <div class="card-body">
+            <h3>Stars &amp; Sunflowers</h3>
+            <p class="desc">A grapevine base layered with daisies, blue poppies, and greenery, finished with a stars-and-stripes bow that does the talking.</p>
+            <a class="card-cta" href="#request">Request this style →</a>
+          </div>
+        </article>
+
+        <article class="wreath-card">
+          <div class="clip">
+            <span class="clip-pin" aria-hidden="true"></span>
+            <img src="let-freedom-ring.jpg" alt="A red, white, and blue Fourth of July wreath with a Let Freedom Ring sign.">
+            <span class="season-tag">4th of July</span>
+          </div>
+          <div class="card-body">
+            <h3>Let Freedom Ring</h3>
+            <p class="desc">Crisp white daisies and red roses paired with a firework-print bow and a hanging "Let Freedom Ring" sign.</p>
+            <a class="card-cta" href="#request">Request this style →</a>
+          </div>
+        </article>
+
+        <article class="wreath-card">
+          <div class="clip">
+            <span class="clip-pin" aria-hidden="true"></span>
+            <img src="Easter.jpg" alt="A bright spring Easter wreath with pastel florals and ribbon.">
+            <span class="season-tag">Easter</span>
+          </div>
+          <div class="card-body">
+            <h3>Easter Morning</h3>
+            <p class="desc">Pastel blooms and springtime ribbon — cheerful and fresh. The kind of wreath that makes a front door feel like the season changed overnight.</p>
+            <a class="card-cta" href="#request">Request this style →</a>
+          </div>
+        </article>
+
+        <article class="wreath-card">
+          <div class="clip">
+            <span class="clip-pin" aria-hidden="true"></span>
+            <img src="Spring.jpg" alt="A fresh spring wreath with mixed blooms and greenery.">
+            <span class="season-tag">Spring</span>
+          </div>
+          <div class="card-body">
+            <h3>First Bloom</h3>
+            <p class="desc">Mixed spring florals in a full, lush arrangement. Light, fresh, and perfect for welcoming warmer weather.</p>
+            <a class="card-cta" href="#request">Request this style →</a>
+          </div>
+        </article>
+
+        <article class="wreath-card">
+          <div class="clip">
+            <span class="clip-pin" aria-hidden="true"></span>
+            <img src="Spring Flowers.jpg" alt="A spring wreath overflowing with colorful flowers.">
+            <span class="season-tag">Spring</span>
+          </div>
+          <div class="card-body">
+            <h3>Spring Flowers</h3>
+            <p class="desc">An abundance of colorful blooms in full spring color. Big, bold, and impossible to walk past without stopping.</p>
+            <a class="card-cta" href="#request">Request this style →</a>
+          </div>
+        </article>
+
+        <article class="wreath-card">
+          <div class="clip">
+            <span class="clip-pin" aria-hidden="true"></span>
+            <img src="Spring hyg.jpg" alt="A cozy spring wreath with soft blooms and warm textures.">
+            <span class="season-tag">Spring</span>
+          </div>
+          <div class="card-body">
+            <h3>Spring Hygge</h3>
+            <p class="desc">Soft blooms with a warm, cozy feel — spring florals without the loudness. Great for someone who likes subtle and beautiful.</p>
+            <a class="card-cta" href="#request">Request this style →</a>
+          </div>
+        </article>
+
+        <article class="wreath-card">
+          <div class="clip">
+            <span class="clip-pin" aria-hidden="true"></span>
+            <img src="Lemon.jpg" alt="A bright lemon and greenery wreath with a fresh summer feel.">
+            <span class="season-tag">Summer</span>
+          </div>
+          <div class="card-body">
+            <h3>Lemon Fresh</h3>
+            <p class="desc">Bright lemons tucked into full greenery — fresh, citrusy, and a little unexpected. Gives any door an instant summery update.</p>
+            <a class="card-cta" href="#request">Request this style →</a>
+          </div>
+        </article>
+
+        <article class="wreath-card">
+          <div class="clip">
+            <span class="clip-pin" aria-hidden="true"></span>
+            <img src="Summer.jpg" alt="A vibrant summer wreath with bright colorful florals.">
+            <span class="season-tag">Summer</span>
+          </div>
+          <div class="card-body">
+            <h3>High Summer</h3>
+            <p class="desc">Vibrant, bright florals in full summer color. The kind of wreath that makes a porch feel like a garden party.</p>
+            <a class="card-cta" href="#request">Request this style →</a>
+          </div>
+        </article>
+
+        <article class="wreath-card">
+          <div class="clip">
+            <span class="clip-pin" aria-hidden="true"></span>
+            <img src="Pink Summer.jpg" alt="A pink floral summer wreath with soft blooms and ribbon.">
+            <span class="season-tag">Summer</span>
+          </div>
+          <div class="card-body">
+            <h3>Pink Summer</h3>
+            <p class="desc">All-pink blooms in a full, feminine arrangement. Soft enough for everyday, summery enough to feel seasonal.</p>
+            <a class="card-cta" href="#request">Request this style →</a>
+          </div>
+        </article>
+
+        <article class="wreath-card">
+          <div class="clip">
+            <span class="clip-pin" aria-hidden="true"></span>
+            <img src="Sunflowers.jpg" alt="A cheerful sunflower wreath with bright yellow blooms.">
+            <span class="season-tag">Summer</span>
+          </div>
+          <div class="card-body">
+            <h3>Sunflowers</h3>
+            <p class="desc">Big, bold sunflowers on a full greenery base. Cheerful, sunny, and works from July through early fall.</p>
+            <a class="card-cta" href="#request">Request this style →</a>
+          </div>
+        </article>
+
+        <article class="wreath-card">
+          <div class="clip">
+            <span class="clip-pin" aria-hidden="true"></span>
+            <img src="1Sunflowers.jpg" alt="A sunflower wreath variation with a slightly different arrangement.">
+            <span class="season-tag">Summer</span>
+          </div>
+          <div class="card-body">
+            <h3>Sunflowers II</h3>
+            <p class="desc">A second sunflower arrangement — same bright energy, slightly different layout. Great if you want the sunflower look with a personal twist.</p>
+            <a class="card-cta" href="#request">Request this style →</a>
+          </div>
+        </article>
+
+        <article class="wreath-card">
+          <div class="clip">
+            <span class="clip-pin" aria-hidden="true"></span>
+            <img src="autumn-harvest.jpg" alt="A full autumn wreath with rust peonies, sunflowers, mini pumpkins, and a layered orange and cream bow.">
+            <span class="season-tag">Fall</span>
+          </div>
+          <div class="card-body">
+            <h3>Harvest Gold</h3>
+            <p class="desc">Rust and gold peonies, cream sunflowers, and a generous layered bow with script ribbon tails. The one that gets the most compliments.</p>
+            <a class="card-cta" href="#request">Request this style →</a>
+          </div>
+        </article>
+
+        <article class="wreath-card">
+          <div class="clip">
+            <span class="clip-pin" aria-hidden="true"></span>
+            <img src="Pink Harvest.jpg" alt="A soft pink fall harvest wreath with autumn florals.">
+            <span class="season-tag">Fall</span>
+          </div>
+          <div class="card-body">
+            <h3>Pink Harvest</h3>
+            <p class="desc">Fall in blush — pink and mauve harvest florals for someone who loves the season but not the orange. A softer take that's just as full and lush.</p>
+            <a class="card-cta" href="#request">Request this style →</a>
+          </div>
+        </article>
+
+        <article class="wreath-card">
+          <div class="clip">
+            <span class="clip-pin" aria-hidden="true"></span>
+            <img src="blush-autumn.jpg" alt="A soft pink and mauve fall wreath with dahlias, sunflowers, white pumpkins, and a satin bow.">
+            <span class="season-tag">Fall</span>
+          </div>
+          <div class="card-body">
+            <h3>Mauve Harvest</h3>
+            <p class="desc">A softer take on fall — mauve dahlias and sunflowers with cream pumpkins, finished in a satin bow for a porch that wants quiet over loud.</p>
+            <a class="card-cta" href="#request">Request this style →</a>
+          </div>
+        </article>
+
+        <article class="wreath-card">
+          <div class="clip">
+            <span class="clip-pin" aria-hidden="true"></span>
+            <img src="winter-snowman.jpg" alt="A white winter wreath shaped around a plush snowman face wearing a top hat, with buffalo check and red ribbon.">
+            <span class="season-tag">Winter</span>
+          </div>
+          <div class="card-body">
+            <h3>Frosty Welcome</h3>
+            <p class="desc">A plush snowman face tucked into frosted pine and pinecones, with a buffalo check and red velvet bow. Dora's most-requested winter piece.</p>
+            <a class="card-cta" href="#request">Request this style →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how-it-works" style="padding-top:0;">
+    <div class="how">
+      <span class="eyebrow">How it works</span>
+      <h2>From request to your front door.</h2>
+      <div class="how-grid">
+        <div class="how-step">
+          <span class="step-label">First</span>
+          <h3>Tell Dora what you want</h3>
+          <p>Send a quick request below — your color palette, a holiday or season, or a wreath from the gallery you'd like matched. The more detail, the better the fit.</p>
+        </div>
+        <div class="how-step">
+          <span class="step-label">Then</span>
+          <h3>She hand-ties it</h3>
+          <p>Every wreath is built fresh, by hand, around a grapevine or wire base — no two turn out identical. Most requests are ready within about a week.</p>
+        </div>
+        <div class="how-step">
+          <span class="step-label">Finally</span>
+          <h3>Pick it up, ready to hang</h3>
+          <p>Dora will confirm pickup details with you directly once it's finished. Local pickup in Jacksonville, FL.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="about">
+      <div class="about-photo">
+        <img src="winter-snowman.jpg" alt="A detailed handmade winter wreath featuring a plush snowman, frosted greenery, and a layered buffalo check bow.">
+      </div>
+      <div class="about-text">
+        <span class="eyebrow">About Dora</span>
+        <h2>Twenty years of wreaths, one ribbon bow at a time.</h2>
+        <p>Dora Fennell has been designing and hand-tying wreaths in Jacksonville for two decades — long enough to have a process, an eye for proportion, and a drawer full of ribbon she's still excited to use.</p>
+        <p>Every piece is built from scratch for the person who ordered it. <strong>No pre-made stock, no two exactly alike.</strong> If you've got a vision — a color you love, a holiday you decorate hard for, or just "something like that one, but more pink" — that's exactly the kind of request she likes best.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REQUEST FORM -->
+  <section class="section" id="request" style="padding-top:0;">
+    <div class="request">
+      <div class="request-inner">
+        <div class="request-intro">
+          <span class="eyebrow">Get started</span>
+          <h2>Request your wreath.</h2>
+          <p>Fill out the form and Dora will follow up directly to talk details, pricing, and timing. Most requests are completed within about a week of confirming the design.</p>
+          <p>Have photos or a Pinterest board to share? Mention it in the details field and she'll ask you to send them along.</p>
+          <div class="alt-contact">
+            Prefer Facebook? <a href="#" target="_blank" rel="noopener">Message Dora's page directly →</a>
+          </div>
+        </div>
+
+        <form method="POST" action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" required autocomplete="name">
+          </div>
+
+          <div class="row-2">
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required autocomplete="email">
+            </div>
+            <div class="field">
+              <label for="phone">Phone <span class="hint">(optional)</span></label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="occasion">What's it for?</label>
+            <select id="occasion" name="occasion">
+              <option value="Fall">Fall / Harvest</option>
+              <option value="Halloween">Halloween</option>
+              <option value="Winter / Christmas">Winter / Christmas</option>
+              <option value="Patriotic / 4th of July">Patriotic / 4th of July</option>
+              <option value="Spring / Easter">Spring / Easter</option>
+              <option value="Everyday / No occasion">Everyday / No occasion</option>
+              <option value="Other">Other (describe below)</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="details">Tell Dora what you're picturing <span class="hint">(colors, size, a wreath from the gallery, anything!)</span></label>
+            <textarea id="details" name="details" placeholder="Example: Something like the &quot;Mauve Harvest&quot; wreath but in oranges instead of pink, for a front door about 36in wide." required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="needed-by">When do you need it by? <span class="hint">(optional)</span></label>
+            <input type="date" id="needed-by" name="needed-by">
+          </div>
+
+          <div class="submit-row">
+            <button type="submit" class="btn btn-primary">Send request</button>
+            <span class="form-note">Dora typically replies within a day or two.</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="brand" style="justify-content:center;"><span class="leaf">🌿</span> Dora Fennell Wreaths</div>
+  <p>Handmade in Jacksonville, Florida · Made to order</p>
+  <p><a href="#" target="_blank" rel="noopener">Find Dora on Facebook</a></p>
+  <p>© <span id="year"></span> Dora Fennell Wreaths. All photos are of Dora's original handmade work.</p>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
