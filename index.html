@@ -1041,7 +1041,13 @@
           </div>
         </div>
 
-        <form method="POST" action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID">
+        <div id="form-success" style="display:none; background:#fff; border-radius:var(--radius); padding:2.2rem; text-align:center;">
+          <p style="font-size:1.5rem;">🌿</p>
+          <h3 style="margin-bottom:0.5rem;">Request sent!</h3>
+          <p style="color:var(--ink-soft);">Dora will be in touch within a day or two to talk details and pricing.</p>
+        </div>
+
+        <form id="wreath-form">
           <div class="field">
             <label for="name">Your name</label>
             <input type="text" id="name" name="name" required autocomplete="name">
@@ -1082,7 +1088,7 @@
           </div>
 
           <div class="submit-row">
-            <button type="submit" class="btn btn-primary">Send request</button>
+            <button type="submit" class="btn btn-primary" id="submit-btn">Send request</button>
             <span class="form-note">Dora typically replies within a day or two.</span>
           </div>
         </form>
@@ -1101,6 +1107,36 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  document.getElementById('wreath-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submit-btn');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    const data = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      phone: document.getElementById('phone').value,
+      occasion: document.getElementById('occasion').value,
+      details: document.getElementById('details').value,
+      'needed-by': document.getElementById('needed-by').value
+    };
+
+    try {
+      await fetch('https://lineagestudio.app.n8n.cloud/webhook/dora-wreath-request', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      document.getElementById('wreath-form').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    } catch (err) {
+      btn.textContent = 'Send request';
+      btn.disabled = false;
+      alert('Something went wrong — please try again or message Dora on Facebook.');
+    }
+  });
 </script>
 
 </body>
